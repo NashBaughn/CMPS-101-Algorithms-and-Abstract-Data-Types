@@ -4,11 +4,6 @@ static int timeT=0;
 
 
 int dfsSweepT(IntVec* adjVerticesT, int n, int* color2, int* parent2, IntVec finishStak1, int* finish_times2, int* discover_times2, IntVec finishStak2, int* dfstRoot2){
-
-
-
-	
-
 	//iterate through parent2 in order assign all values to 1 because it will change to -1 IF it is a root
 	for(int i = 0; i<n; i++){
 		parent2[i] = 1;
@@ -51,14 +46,13 @@ int dfsT(IntVec* adjVerticesT, int v, int* color2, int* parent2, IntVec finishSt
 		w = intTop(remAdj);
 		intVecPop(remAdj);
 		
-		
-	
 		if(color2[w-1]== 0){
 			int wAns = dfsT(adjVerticesT, w-1, color2, parent2, finishStak1, finish_times2, discover_times2, finishStak2, dfstRoot2);
 		}else{
 		}
 
 	}
+	
 	intVecPush(finishStak2, v+1);
 	color2[v] = 2;
 

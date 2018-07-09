@@ -4,9 +4,6 @@ static int time=0;
 
 
 IntVec dfsSweep(IntVec* adjVertices, int n, int* color, int* parent,  int* finish_times, int* discover_times, IntVec finishStak1){
-	
-
-
 
 	for(int i = 0; i<n; i++){
 		parent[i] = 1;
@@ -32,17 +29,11 @@ int dfs(IntVec* adjVertices, int v, int* color, int* parent,  int* finish_times,
 
 	IntVec remAdj = (IntVec)calloc(1, sizeof(IntVec));
 
-
 	remAdj = adjVertices[v];
-
-
-	
-
 
 	color[v] = 1;
 	time++;
 	discover_times[v] = time;
-
 
 	while(intSize(remAdj) > 0){
 	
